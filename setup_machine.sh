@@ -43,3 +43,6 @@ wget -O .config/nvim/init.vim https://raw.githubusercontent.com/duarteocarmo/dot
 
 # tmux
 cd ~ && wget https://raw.githubusercontent.com/duarteocarmo/dotfiles/master/.tmux.conf
+
+
+# add git configuration
