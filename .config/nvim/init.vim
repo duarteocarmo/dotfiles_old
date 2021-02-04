@@ -15,10 +15,11 @@ set cursorline                      " highlight current line
 set cursorline                      " highlight current line
 set mouse=a                         " mouse support?                        
 set incsearch                       " search highlighing
+set guicursor=                      " vim like cursor behavior
 
 
 " Fixes for Tmux rendering
-" This is only necessary if you use "set termguicolors".
+" This is only necessary if you use 'set termguicolors'
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -37,6 +38,8 @@ Plug 'jiangmiao/auto-pairs'             " auto close brackets
 Plug 'plasticboy/vim-markdown'          " Markdown folding 
 Plug 'sjl/badwolf'                      " Badwolf colorscheme
 Plug 'psf/black'                        " prettify my code please thanks
+Plug 'nathangrigg/vim-beancount'        " beancount plugin
+Plug 'rust-lang/rust.vim'               " rust plugin
 call plug#end()                         " vim-plugs should not be declared below this.
 
 colorscheme badwolf                     " colorscheme
