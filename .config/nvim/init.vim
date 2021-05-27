@@ -39,7 +39,12 @@ Plug 'plasticboy/vim-markdown'          " Markdown folding
 Plug 'sjl/badwolf'                      " Badwolf colorscheme
 Plug 'psf/black'                        " prettify my code please thanks
 Plug 'nathangrigg/vim-beancount'        " beancount plugin
-Plug 'rust-lang/rust.vim'               " rust plugin
+Plug 'embark-theme/vim', { 'as': 'embark'  } " theme
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula'  }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'} " conquer of completion
 call plug#end()                         " vim-plugs should not be declared below this.
 
 colorscheme badwolf                     " colorscheme
@@ -50,3 +55,11 @@ autocmd FileType markdown let g:vim_markdown_new_list_item_indent = 0
 " Because we dont want to screw with PEP 8
 autocmd FileType python let g:black_linelength = 79         " max file length
 
+" Clear search highlighting when hitting ESC
+nnoremap <esc> :let @/=""<return><esc>
+
+" Ctrl+p for fzf vim
+nnoremap <C-p> :GFiles<Cr>
+
+" Spell check for markdown files
+autocmd FileType markdown setlocal spell
