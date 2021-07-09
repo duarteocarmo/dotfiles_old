@@ -37,10 +37,11 @@ Plug 'ervandew/supertab'                " tab autocomplete
 Plug 'jiangmiao/auto-pairs'             " auto close brackets
 Plug 'plasticboy/vim-markdown'          " Markdown folding 
 Plug 'sjl/badwolf'                      " Badwolf colorscheme
-Plug 'psf/black'                        " prettify my code please thanks
 Plug 'nathangrigg/vim-beancount'        " beancount plugin
 Plug 'embark-theme/vim', { 'as': 'embark'  } " theme
 Plug 'morhetz/gruvbox'
+Plug 'wojciechkepka/vim-github-dark'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -49,11 +50,13 @@ call plug#end()                         " vim-plugs should not be declared below
 
 colorscheme badwolf                     " colorscheme
 
+
 " Configuration for vim-markdown plugin
 autocmd FileType markdown let g:vim_markdown_new_list_item_indent = 0
 
 " Because we dont want to screw with PEP 8
 autocmd FileType python let g:black_linelength = 79         " max file length
+nnoremap <C-k> :Black<Cr>
 
 " Clear search highlighting when hitting ESC
 nnoremap <esc> :let @/=""<return><esc>
